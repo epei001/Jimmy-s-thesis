@@ -1,0 +1,85 @@
+\documentclass[a4paper, 12pt]{book}
+
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{array}
+
+\usepackage{wallpaper}
+
+% uncomment this if you want to indent the first paragraph
+%\usepackage{indentfirst}
+
+% uncomment this if you want to make pdf file with hyperlink
+% \usepackage[dvipdf,colorlinks=false,unicode]{hyperref}
+
+% uncomment the following and correct them if you want to set 
+% set the pdf properties
+%\hypersetup{
+%	pdfauthor={Tz-Huan Huang},
+%	pdftitle={A Benchmark for Region-of-Interest Detection in Images},
+%	pdfsubject={Master Thesis}
+%}
+
+\usepackage{utaipei}
+\usepackage{booktabs}
+\usepackage{pdfpages}
+
+\setcounter{tocdepth}{2}
+
+\pagestyle{plain}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\begin{document}
+
+% cover page
+\CenterWallPaper{}{watermark}
+\maketitle
+% side page, used for printing on spline.
+\makeside
+
+\maketitlep
+
+%\frontmatter
+
+\begin{CJK}{UTF8}{nkai}
+\CJKhorz
+%\makecertificationCH
+%\makecertificationEN
+
+% comment one of the following unless you are sure you want to 
+% have both english and chinese acknowledgements in your thesis
+%\input{acknowledgementsEN}
+\input{acknowledgementsCH}
+\input{abstractCH}
+\input{abstractEN}
+\tableofcontents
+\end{CJK}
+\listoffigures
+\listoftables
+
+\mainmatter
+
+% input your thesis here
+\input{introduction}
+\input{related}
+\input{methodology}
+\input{result}
+\input{conclusion}
+
+\backmatter
+
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{abbrv}
+
+% input your reference here
+\bibliography{thesis}
+
+\appendix
+
+\end{document}
